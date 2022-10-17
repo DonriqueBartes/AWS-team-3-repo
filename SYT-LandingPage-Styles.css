@@ -1,0 +1,55 @@
+.table-nav {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(255, 255, 255);
+    width: 1850px;
+    height: 100px;
+    border-color: black;
+    border-radius: 100px;
+  }
+
+  table, th, td {
+    border: 1px hidden;
+    border-spacing:1p;
+
+  }
+
+  th {
+    font-size: x-large;
+    color: rgb(14, 14, 14);  
+ }
+
+.button1{
+    font-size: xx-large;
+}
+
+ .table-main {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    background-color: rgb(184, 184, 184);
+    width: 1500px;
+    height: 500px;
+    border-color: black;
+    border-radius: 25px;
+  }
+
+.card{
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 15px; 
+    background-image: url(images/food.png);
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
