@@ -1,0 +1,21 @@
+{
+    "restaurants": [
+        {
+            "name": "Iron Steak and Bar ",
+            "description": "IRON STEAK AND BAR, where you can enjoy a range of world class dishes including mouth-watering steaks flame grilled to perfection on our imported Spanish Vulcano Grez grill."
+        },
+        {
+            "name": "The Butcher Shop and Grill",
+            "description": "The Butcher Shop and Grill offers the best red meat and wine meals. Best meat restaurant, best private dining, butcher shop in Cape Town."
+        },
+        {
+            "name": "City Grill Steakhouse",
+            "description": "City Grill is based on a one-of-a-kind food concept – showcasing South African Traditional food fare that we are known and loved for around the world. Featuring a menu of exceptional matured craft cut steaks, various venison options, fresh seafood, gourmet hamburgers and more."
+        },
+        {
+            "name": "The Hussar Grill",
+            "description": "The Hussar Grill welcomes you into the world of one of South Africa's premier grill rooms - perfectly aged succulent steaks, delectable house specialities and an amazing award-winning wine selection... or you can bring your own favourite wine, at no charge!"
+        }
+
+    ]
+}
