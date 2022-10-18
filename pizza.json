@@ -1,0 +1,21 @@
+[
+    {
+        "cardimage" : "images/company-logo.png",
+        "restuarant" : "Steers",
+        "details" : "Amazing flame grilled burgers and double thick milkshakes",
+        "specialties" : "B&C burgers, ribs, chicken, ice cream, waffles"
+    },
+    {
+        "cardimage" : "images/company-logo.png",
+        "restuarant" : "Steers",
+        "details" : "Amazing flame grilled burgers and double thick milkshakes",
+        "specialties" : "B&C burgers, ribs, chicken, ice cream, waffles"
+    },
+    {
+        "cardimage" : "images/company-logo.png",
+        "restuarant" : "Steers",
+        "details" : "Amazing flame grilled burgers and double thick milkshakes",
+        "specialties" : "B&C burgers, ribs, chicken, ice cream, waffles"
+    }
+    
+]
