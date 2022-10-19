@@ -7,16 +7,16 @@
     {
         "cardimage": "/images/",
         "restuarant": "Best of Asia",
-        "details": "We are well known for our great value for money and extremely reasonable fresh sushi specials with excellent service."
+        "detail": "We are well known for our great value for money and extremely reasonable fresh sushi specials with excellent service."
     },
     {
         "cardimage": "/images/",
         "restuarant": "Willoughby & Co.",
-        "details": "Willoughby & Co offers its clientele a full Japanese kitchen, ranging from the freshest sushi to tempura dishes, oyster shooters to soups and salads."
+        "detail": "Willoughby & Co offers its clientele a full Japanese kitchen, ranging from the freshest sushi to tempura dishes, oyster shooters to soups and salads."
     },
     {
         "cardimage": "/images/",
         "restuarant": "NURI SUSHI",
-        "details": "Inspired by the Traditional Craftsmanship of Japan, We Offer Great Quality Sushi at an Affordable Price. Delicious Seafood, Classic to Gourmet Sushi."
+        "detail": "Inspired by the Traditional Craftsmanship of Japan, We Offer Great Quality Sushi at an Affordable Price. Delicious Seafood, Classic to Gourmet Sushi."
     }
 ]
