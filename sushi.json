@@ -1,21 +1,21 @@
 [
     {
-        "cardimage": "",
+        "cardimage": "/images/",
         "restuarant": "Nobu",
         "details": "The only Nobu in Africa. Embark on an unforgettable journey of gourmet excellence, fresh creations and masterful Japanese-Peruvian cuisine with Nobu Cape Town."
     },
     {
-        "cardimage": "",
+        "cardimage": "/images/",
         "restuarant": "Best of Asia",
         "detail": "We are well known for our great value for money and extremely reasonable fresh sushi specials with excellent service."
     },
     {
-        "cardimage": "",
+        "cardimage": "/images/",
         "restuarant": "Willoughby & Co.",
         "detail": "Willoughby & Co offers its clientele a full Japanese kitchen, ranging from the freshest sushi to tempura dishes, oyster shooters to soups and salads."
     },
     {
-        "cardimage": "",
+        "cardimage": "/images/",
         "restuarant": "NURI SUSHI",
         "detail": "Inspired by the Traditional Craftsmanship of Japan, We Offer Great Quality Sushi at an Affordable Price. Delicious Seafood, Classic to Gourmet Sushi."
     }
