@@ -37,7 +37,7 @@
 
  h3{
   margin: auto  ;
-  height: 80px;
+  height: 100px;
   font-size: medium;
   font-family: 'baskerville', serif;
   margin-top: 10px;
@@ -139,7 +139,7 @@
 }
 
 .container-button{
-  background-color: rgb(0, 245, 82);
+  background-color: #7ed957;
   border-radius: 75px;
   word-spacing: 80px;  
   
@@ -204,6 +204,10 @@ img {
   margin: 20px 50px;
   margin-top: 20px;
   cursor: pointer;
+}
+
+.card-button:hover{
+  background-color: #4CAF50;
 }
 
 .logo-image{

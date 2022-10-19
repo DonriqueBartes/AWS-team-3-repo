@@ -6,7 +6,7 @@ function wantItalian()
     })
     .then(function(italian){
         let placeholder = document.querySelector("#data-output")
-        let output = "";
+        let output = "<p>   </p>";
 
         for(let place of italian){
             output += ` 
@@ -15,8 +15,7 @@ function wantItalian()
                     <img class = "cardimage" src="${place.cardimage}">
                     <h2>${place.restuarant}</h2>
                     <h3>${place.details}</h3>
-                    
-                    <button id = "check resturant">View Details</button>
+                    <button onclick="${place.link}">Visit Website</button>
                 </div>
             </div>
             `;
