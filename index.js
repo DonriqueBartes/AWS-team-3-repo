@@ -15,7 +15,7 @@ function wantItalian()
                     <img class = "cardimage" src="${place.cardimage}">
                     <h2>${place.restuarant}</h2>
                     <h3>${place.details}</h3>
-                    <button onclick="${place.link}">Visit Website</button>
+                    <button onclick="window.location.href='${place.link}';">Visit ${place.restuarant}</button>
                 </div>
             </div>
             `;
@@ -41,7 +41,7 @@ function wantSteak()
                     <img class = "cardimage" src="${place.cardimage}">
                     <h2>${place.restuarant}</h2>
                     <h3>${place.details}</h3>
-                    <button onclick="${place.link}">Visit Website</button>
+                    <button onclick="window.location.href='${place.link}';">Visit ${place.restuarant}</button>
                 </div>
             </div>
             `;
@@ -66,7 +66,7 @@ function wantSushi()
                     <img class = "cardimage" src="${place.cardimage}">
                     <h2>${place.restuarant}</h2>
                     <h3>${place.details}</h3>
-                    <button onclick="${place.link}">Visit Website</button>
+                    <button onclick="window.location.href='${place.link}';">Visit ${place.restuarant}</button>
                 </div>
             </div>
             `;
