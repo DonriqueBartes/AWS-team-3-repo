@@ -1,22 +1,23 @@
 [
     {
-        "cardimage":"/images/",
+        "cardimage":"./images/steak1.jpeg",
         "restuarant": "Iron Steak and Bar ",
         "details": "IRON STEAK AND BAR, where you can enjoy a range of world class dishes including mouth-watering steaks flame grilled to perfection on our imported Spanish Vulcano Grez grill."
+
     },
     {
-        "cardimage":"/images/",
+        "cardimage":"./images/steak2.jpeg",
         "restuarant": "The Butcher Shop and Grill",
-        "details": "The Butcher Shop and Grill offers the best red meat and wine meals. Best meat restaurant, best private dining, butcher shop in Cape Town." 
+        "details": "The Butcher Shop and Grill offers the best red meat and wine meals. Best meat restaurant, best private dining, butcher shop in Cape Town."
     },          
     {
-        "cardimage":"/images/",
+        "cardimage":"./images/steak3.jpeg",
         "restuarant": "City Grill Steakhouse",
         "details": "City Grill is based on a one-of-a-kind food concept – showcasing South African Traditional food fare that we are known and loved for around the world. Featuring a menu of exceptional matured craft cut steaks, various venison options, fresh seafood, gourmet hamburgers and more."
     },
     {
-        "cardimage":"/images/",
+        "cardimage":"./images/steak4.jpeg",
         "restuarant": "The Hussar Grill",
-        "details": "The Hussar Grill welcomes you into the world of one of South Africa's premier grill rooms - perfectly aged succulent steaks, delectable house specialities and an amazing award-winning wine selection... or you can bring your own favourite wine, at no charge!"        
+        "details": "The Hussar Grill welcomes you into the world of one of South Africa's premier grill rooms - perfectly aged succulent steaks, delectable house specialities and an amazing award-winning wine selection... or you can bring your own favourite wine, at no charge!"
     }
 ]
