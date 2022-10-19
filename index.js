@@ -41,7 +41,7 @@ function wantSteak()
                     <img class = "cardimage" src="${place.cardimage}">
                     <h2>${place.restuarant}</h2>
                     <h3>${place.details}</h3>
-                    
+                    <button onclick="${place.link}">Visit Website</button>
                     <button id = "check resturant">View Details</button>
                 </div>
             </div>
@@ -67,7 +67,7 @@ function wantSushi()
                     <img class = "cardimage" src="${place.cardimage}">
                     <h2>${place.restuarant}</h2>
                     <h3>${place.details}</h3>
-                    
+                    <button onclick="${place.link}">Visit Website</button>
                     <button id = "check resturant">View Details</button>
                 </div>
             </div>
