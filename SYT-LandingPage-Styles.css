@@ -31,7 +31,13 @@
 
  h2{
   margin: auto  ;
-  font-size: xxx-large;
+  font-size: xx-large;
+  font-family: 'baskerville', serif;
+ }
+
+ h3{
+  margin: auto  ;
+  font-size: small;
   font-family: 'baskerville', serif;
  }
 
@@ -114,8 +120,7 @@
 .container {
   display: flex;
   justify-content: center;
-  padding-left: 800px;
-  margin-top: 50px;
+
 }
 
 .container-image{
@@ -180,7 +185,7 @@ img {
 .card p {
   padding: 20px;
   font-family: 'baskerville', serif;
-  font-size: x-large;
+  font-size: small;
 }
 
 .card button {
@@ -191,4 +196,11 @@ img {
   text-align: center;
   margin: 20px 50px;
   cursor: pointer;
+}
+
+.logo-image{
+  height: auto;
+  width: 35%;
+  position: relative;
+  margin: auto;
 }
