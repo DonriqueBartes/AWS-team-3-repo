@@ -1,6 +1,6 @@
 function wantItalian()
 {
-    fetch("Italian.json")
+    fetch("restuarants/Italian.json")
     .then(function(response){
         return response.json();
     })
@@ -26,7 +26,7 @@ function wantItalian()
 
 function wantSteak()
 {
-    fetch("steakhouses.json")
+    fetch("restuarants/steakhouses.json")
     .then(function(response){
         return response.json();
     })
@@ -51,7 +51,7 @@ function wantSteak()
 }
 function wantSushi()
 {
-    fetch("sushi.json")
+    fetch("restuarants/sushi.json")
     .then(function(response){
         return response.json();
     })
