@@ -1,0 +1,23 @@
+[
+    {
+        "cardimage":"./images/italian1.jpeg",
+        "restuarant": "Mario's Italian",
+        "details": "Come by our cozy Italian eatery, where we serve-up a delicious menu which includes small plates, happy hour bites and vegetarian options."
+
+    },
+    {
+        "cardimage":"./images/italian2.jpeg",
+        "restuarant": "Col'Cacchio",
+        "details": "Col'Cacchio serves delicious wood-fired pizzas, sumptuous pastas and gourmet salads that send taste buds into a wild frenzy."
+    },          
+    {
+        "cardimage":"./images/italian3.jpeg",
+        "restuarant": "il Leone Mastrantonio",
+        "details": "Boasting a walk-in wine cellar, private dining room and bar, Il Leone offers a sophisticated atmosphere, with the same delicious standard of food that Mastrantonio patrons have come to love and know."
+    },
+    {
+        "cardimage":"./images/italian4.jpeg",
+        "restuarant": "PRIMI",
+        "details": "At PRIMI we strive to perfect the overall eating experience with a masterful display of traditional culinary simplicity and complexity in perfect harmony within our vibrant South African URBAN landscape."
+    }
+]
