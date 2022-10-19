@@ -1,6 +1,6 @@
- [
+[
     {
-        "cardimage": "./images/",
+        "cardimage" : "./images",
         "restuarant": "Mario's Italian",
         "details": "Come by our cozy Italian eatery, where we serve-up a delicious menu which includes small plates, happy hour bites and vegetarian options."
     },
