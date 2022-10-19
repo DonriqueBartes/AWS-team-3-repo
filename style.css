@@ -11,7 +11,7 @@
     -webkit-animation: move 10s ease infinite;
             animation: move 10s ease infinite;
     transform: translate3d(0, 0, 0);
-    background: gray;
+    background: black;
     height: 100vh;
   }
   
