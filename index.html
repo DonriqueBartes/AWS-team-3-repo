@@ -20,7 +20,7 @@
 
 <body class ="body">
     
-    <!-- To Do: Header -->
+    <!-- Done: Header -->
     <header>
         <img class="logo-image" src="./images/select-your-taste.png">
     </header>
@@ -30,28 +30,11 @@
     
         <!-- Done: Category Navigation Bar-->
         <div class = "container-button">
-            <button class='button1' onclick=changeItalian() type ='button'>Italian </button>
-            <button class='button2' onclick=changeSteak() type ='button'>Steakhouses</button>
-            <button class='button3' onclick=changeSushi() type ='button'>Sushi</button>
+            <button class='button1' onclick=wantItalian() type ='button'>Italian </button>
+            <button class='button2' onclick=wantSteak() type ='button'>Steakhouses</button>
+            <button class='button3' onclick=wantSushi() type ='button'>Sushi</button>
         </div>
-
-    <script>
-        function changeItalian()
-        {
-            wantItalian()
-        }
-        function changeSteak()
-        {
-            wantSteak()
-        }
-        function changeSushi()
-        {
-            wantSushi()
-        }
-    </script>
-
-        <section class = "container-image">
-            
+    
             <div >
                 <div class="container">
                     <!-- Calls to the json file to get restuarant details -->
@@ -60,7 +43,7 @@
                 </div>
             </div>
             
-        </section>
+
     <!-- To Do: Footer(Unplanned) -->
 </body>
 </html>
