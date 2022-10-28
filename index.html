@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        
+        <title>Select Your Taste</title>
+    
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Akaya Telivigala' rel='stylesheet'>
+</head>
+
+<body class ="body">
+    
+    <!-- Done: Header -->
+    <header>
+        <img class="logo-image" src="./images/select-your-taste.png">
+    </header>
+
+    
+    <!--Navi for food selection-->
+    
+        <!-- Done: Category Navigation Bar-->
+        <div class = "container-button">
+            <button id="italian" class='btn-catg' onclick='findFood(this.value)' value="italian">Italian </button>
+            <button id="steak" class='btn-catg' onclick='findFood(this.value)' value="steakhouses">Steakhouses</button>
+            <button id="sushi" class='btn-catg' onclick='findFood(this.value)' value="sushi">Sushi</button>
+        </div>
+    
+            <div >
+                <div class="container-image">
+                    <!-- Calls to the json file to get restuarant details -->
+                    <div class= "data-out" id="data-output">
+                    </div>
+                </div>
+            </div>
+            
+
+    <!-- To Do: Footer(Unplanned) -->
+</body>
+</html>
