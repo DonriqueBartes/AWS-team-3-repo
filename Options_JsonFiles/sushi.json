@@ -3,24 +3,28 @@
         "cardimage": "/images/sushi1.jpeg",
         "title": "Nobu",
         "details": "The only Nobu in Africa. Embark on an unforgettable journey of gourmet excellence, fresh creations and masterful Japanese-Peruvian cuisine with Nobu Cape Town.",
-        "link": "https://www.noburestaurants.com/capetown/home/"
+        "link": "https://www.noburestaurants.com/capetown/home/",
+        "location": "https://www.google.com/maps/place/Nobu/@-33.908698,18.4161886,17z/data=!3m1!4b1!4m6!3m5!1s0x1dcc67509d7b185d:0x152ae7fbdd872053!8m2!3d-33.908698!4d18.4161886!16s%2Fg%2F1tkzjhb5"
     },
     {
         "cardimage": "/images/sushi2.jpeg",
         "title": "Best of Asia",
         "details": "We are well known for our great value for money and extremely reasonable fresh sushi specials with excellent service.",
-        "link": "https://www.zomato.com/capetown/best-of-asia-green-point"
+        "link": "https://www.zomato.com/capetown/best-of-asia-green-point",
+        "location": "https://www.google.com/maps/search/Best+of+Asia/@-33.908698,18.4161886,14z/data=!3m1!4b1"
     },
     {
         "cardimage": "/images/sushi3.jpeg",
         "title": "Willoughby & Co.",
         "details": "Willoughby & Co offers its clientele a full Japanese kitchen, ranging from the freshest sushi to tempura dishes, oyster shooters to soups and salads.",
-        "link": "https://www.willoughbyandco.co.za"
+        "link": "https://www.willoughbyandco.co.za",
+        "location": "https://www.google.com/maps/place/Willoughby+%26+Co./@-33.902728,18.4215683,17z/data=!3m2!4b1!5s0x1dcc6750c71e8ca3:0xae90d9bf3e86fe80!4m6!3m5!1s0x1dcc67509602f587:0x61c6ed3b34cfa651!8m2!3d-33.902728!4d18.4215683!16s%2Fg%2F1xc60jg0"
     },
     {
         "cardimage": "/images/sushi4.jpeg",
         "title": "NURI SUSHI",
         "details": "Inspired by the Traditional Craftsmanship of Japan, We Offer Great Quality Sushi at an Affordable Price. Delicious Seafood, Classic to Gourmet Sushi.",
-        "link": "https://www.nuri.co.za"
+        "link": "https://www.nuri.co.za",
+        "location": "https://www.google.com/maps/search/Nuri+Sushi/@-33.902728,18.4215683,13z/data=!3m1!4b1"
     }
 ]

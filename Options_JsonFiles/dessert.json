@@ -1,0 +1,23 @@
+[
+    {
+        "cardimage":"./images/dessert2.jpeg",
+        "title": "The Creamery",
+        "details": "We make the best natural ice cream we can with seasonal and predominantly local ingredients.",
+        "link": "https://thecreamery.co.za",
+        "location": "https://www.google.com/maps/search/the+creamery/@-33.9524858,18.4410639,13z/data=!3m1!4b1"
+    },
+    {
+        "cardimage":"./images/dessert1.jpeg",
+        "title": "Moro Gelato",
+        "details": "Gelato is a freshly made, cold food made from fresh and pure local ingredients on a daily basis.",
+        "link": "http://morogelato.co.za",
+        "location": "https://www.google.com/maps/search/moro+gelato/@-33.9524858,18.4410639,13z/data=!3m1!4b1"
+    },          
+    {
+        "cardimage":"./images/dessert3.jpeg",
+        "title": "Crumbs and Cream",
+        "details": "At Crumbs & Cream we're all about keeping it fresh, so you'll find lots of our regularly updated ice-cream & cookie combinations on our menu and in-store.",
+        "link": "https://www.crumbsandcream.co.za",
+        "location": "https://www.google.com/maps/search/Crumbs+And+Cream/@-33.9524858,18.4410639,13z/data=!3m1!4b1"
+    }
+]
