@@ -1,76 +1,25 @@
-function wantItalian()
+async function findFood(selectedValue)
 {
-    fetch("Options_JsonFiles/italian.json")
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(italian){
-        let placeholder = document.querySelector("#data-output")
-        let output = "<p>   </p>";
+    let data = await fetch("Options_JsonFiles/"+selectedValue+".json")
+    let foodChoice = await data.json();
 
-        for(let place of italian){
-            output += ` 
-            <div>
-                <div class = "card">                                       
-                    <img class = "cardimage" src="${place.cardimage}">
-                    <h2>${place.title}</h2>
-                    <h3>${place.details}</h3>
-                    <button onclick="window.location.href='${place.link}';">Visit ${place.title}</button>
-                </div>
+    console.log(foodChoice)
+
+    let placeholder = document.querySelector("#data-output")
+    let output = "";
+
+    for(let place of foodChoice){
+        output += ` 
+        <div>
+            <div class = "card">                                       
+                <img class = "card-image" src="${place.cardimage}">
+                <h2>${place.title}</h2>
+                <h3>${place.details}</h3>
+                <button class = "card-button" onclick="window.location.href='${place.link}';">Visit ${place.title}</button>
             </div>
-            `;
-            }
-        placeholder.innerHTML = output;
-        })
-}
-
-function wantSteak()
-{
-    fetch("Options_JsonFiles/steakhouses.json")
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(steakhouses){
-        let placeholder = document.querySelector("#data-output")
-        let output = "";
-
-        for(let place of steakhouses){
-            output += ` 
-            <div>
-                <div class = "card">                                       
-                    <img class = "cardimage" src="${place.cardimage}">
-                    <h2>${place.title}</h2>
-                    <h3>${place.details}</h3>
-                    <button onclick="window.location.href='${place.link}';">Visit ${place.title}</button>
-                </div>
-            </div>
-            `;
-            }
-        placeholder.innerHTML = output;
-        })
-}
-function wantSushi()
-{
-    fetch("Options_JsonFiles/sushi.json")
-    .then(function(response){
-        return response.json();
-    })
-    .then(function(sushi){
-        let placeholder = document.querySelector("#data-output")
-        let output = "";
-
-        for(let place of sushi){
-            output += ` 
-            <div>
-                <div class = "card">                                       
-                    <img class = "cardimage" src="${place.cardimage}">
-                    <h2>${place.title}</h2>
-                    <h3>${place.details}</h3>
-                    <button onclick="window.location.href='${place.link}';">Visit ${place.title}</button>
-                </div>
-            </div>
-            `;
-            }
-        placeholder.innerHTML = output;
-        })
+        </div>
+        `;
+        }
+    placeholder.innerHTML = output;
+    
 }

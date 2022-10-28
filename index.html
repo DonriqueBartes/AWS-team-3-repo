@@ -7,15 +7,13 @@
         <title>Select Your Taste</title>
     
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="index.js"></script>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type='text/css' href="styles.css">
     <link href='https://fonts.googleapis.com/css?family=Akaya Telivigala' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Baskersville' rel='stylesheet'>
 </head>
 
 <body class ="body">
@@ -30,9 +28,9 @@
     
         <!-- Done: Category Navigation Bar-->
         <div class = "container-button">
-            <button class='button1' onclick=wantItalian() type ='button'>Italian </button>
-            <button class='button2' onclick=wantSteak() type ='button'>Steakhouses</button>
-            <button class='button3' onclick=wantSushi() type ='button'>Sushi</button>
+            <button id="italian" class='btn-catg' onclick='findFood(this.value)' value="italian">Italian </button>
+            <button id="steak" class='btn-catg' onclick='findFood(this.value)' value="steakhouses">Steakhouses</button>
+            <button id="sushi" class='btn-catg' onclick='findFood(this.value)' value="sushi">Sushi</button>
         </div>
     
             <div >
