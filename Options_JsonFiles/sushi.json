@@ -3,24 +3,28 @@
         "cardimage": "/images/sushi1.jpeg",
         "title": "Nobu",
         "details": "The only Nobu in Africa. Embark on an unforgettable journey of gourmet excellence, fresh creations and masterful Japanese-Peruvian cuisine with Nobu Cape Town.",
-        "link": "https://www.noburestaurants.com/capetown/home/"
+        "link": "https://www.noburestaurants.com/capetown/home/",
+        "location" : "https://www.google.com/maps/d/embed?mid=1LM_0jXZ1TEKHLQC3S8NSPNePXTZKXdI&ehbc=2E312F"
     },
     {
         "cardimage": "/images/sushi2.jpeg",
         "title": "Best of Asia",
         "details": "We are well known for our great value for money and extremely reasonable fresh sushi specials with excellent service.",
-        "link": "https://www.zomato.com/capetown/best-of-asia-green-point"
+        "link": "https://www.zomato.com/capetown/best-of-asia-green-point",
+        "location" : "https://www.google.com/maps/d/u/0/embed?mid=1wb-j-KYDCsglzeCiQc9Zpml578XOaOw&ehbc=2E312F"
     },
     {
         "cardimage": "/images/sushi3.jpeg",
         "title": "Willoughby & Co.",
         "details": "Willoughby & Co offers its clientele a full Japanese kitchen, ranging from the freshest sushi to tempura dishes, oyster shooters to soups and salads.",
-        "link": "https://www.willoughbyandco.co.za"
+        "link": "https://www.willoughbyandco.co.za",
+        "location" : "https://www.google.com/maps/d/u/0/embed?mid=1f_6kaIL39qO8qMoXRAdtcazqiipOUBA&ehbc=2E312F"
     },
     {
         "cardimage": "/images/sushi4.jpeg",
         "title": "NURI SUSHI",
         "details": "Inspired by the Traditional Craftsmanship of Japan, We Offer Great Quality Sushi at an Affordable Price. Delicious Seafood, Classic to Gourmet Sushi.",
-        "link": "https://www.nuri.co.za"
+        "link": "https://www.nuri.co.za",
+        "location" : "https://www.google.com/maps/d/u/0/embed?mid=1ha5wj5iZikiSSERLCt9vKoijtTotFR4&ehbc=2E312F"
     }
 ]
