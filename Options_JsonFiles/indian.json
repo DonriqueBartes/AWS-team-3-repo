@@ -1,0 +1,30 @@
+[
+    {
+        "cardimage":"./images/indian4.jpeg",
+        "title": "Saleh BBQ Tonight",
+        "details": "We are dedicated in bringing you tasteful Indian dishes that you will absolutely love.",
+        "link": "https://salehbbqtonight.co.za",
+        "location" : "https://www.google.com/maps/d/embed?mid=1Fj8MfGj_MpggV8VOpc3TCBarrEHBWU0&ehbc=2E312F"
+    },
+    {
+        "cardimage":"./images/indian2.jpeg",
+        "title": "Bokaap kombuis",
+        "details": "Bo-Kaap Kombuis is an authentic Cape Malay Restaurant that embodies the culture, beauty and uniqueness of the area.",
+        "link": "http://www.bokaapkombuis.co.za",
+        "location" : "https://www.google.com/maps/d/embed?mid=1HkhCBgragprjF6JNTpsqtqPNKBEfynE&ehbc=2E312F"
+    },
+    {
+        "cardimage":"./images/indian1.jpeg",
+        "title": "Biesmiellah Restaurant",
+        "details": "Biesmiellah has been serving the local Cape Muslim community and, increasingly, tourists for 40 years. Halaal Certified.",
+        "link": "https://hungryforhalaal.co.za/listing/biesmiellah-cape-town-cbd/",
+        "location" : "https://www.google.com/maps/d/embed?mid=1nD9-ZyyMTV6qUdW2N4onebAUF_SR2qA&ehbc=2E312F"
+    },          
+    {
+        "cardimage":"./images/indian3.jpeg",
+        "title": "Food inn",
+        "details": "Curries, often in wraps and bread bowls, served in simple fast food-style restaurant and takeaway.",
+        "link": "https://www.facebook.com/FoodInnIndiaCapeTown/",
+        "location" : "https://www.google.com/maps/d/embed?mid=1kiHZYLS4tnFIhZMZ6m7IdaPV1_eTeN4&ehbc=2E312F"
+    }
+]

@@ -5,7 +5,7 @@ async function findFood(selectedValue)
 
     console.log(foodChoice)
 
-    let placeholder = document.querySelector("#data-output")
+    let foodHolder = document.querySelector("#data-output")
     let output = "";
 
     for(let place of foodChoice){
@@ -14,12 +14,44 @@ async function findFood(selectedValue)
             <div class = "card">                                       
                 <img class = "card-image" src="${place.cardimage}">
                 <h2>${place.title}</h2>
-                <h3>${place.details}</h3>
-                <button class = "card-button" onclick="window.location.href='${place.link}';">Visit ${place.title}</button>
+                <p>${place.details}<p>
+                <div class = "card-button-container">
+                    <button class ="card-button" onclick="window.location.href='${place.link}';">Visit ${place.title}</button>
+                    <button class ="card-button" id="${place.location}" onClick="reply_click(this.id)" data-toggle="modal" data-target="#myModal">Map</button>
+                </div>
+                
             </div>
         </div>
         `;
         }
-    placeholder.innerHTML = output;
-    
+    foodHolder.innerHTML = output;
+}
+
+function reply_click(clicked_id)
+{
+    let placeHolder = document.querySelector("#output-stuff")
+    placeHolder.innerHTML = `
+    <div class = "container">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                        <h4><b>Where can you find me?</b></h4>
+                        </div>
+                            <div class="modal-body">
+                                <p>
+                                <iframe src="${clicked_id}" width="550" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </p>
+                            </div>
+                        <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`;
 }

@@ -3,24 +3,28 @@
         "cardimage":"./images/italian1.jpeg",
         "title": "Mario's Italian",
         "details": "Come by our cozy Italian eatery, where we serve-up a delicious menu which includes small plates, happy hour bites and vegetarian options.",
-        "link": "https://marios.business.site"
+        "link": "https://marios.business.site",
+        "location" : "https://www.google.com/maps/d/embed?mid=1Q9cfojgxJ2AC-qJ_Rx8jsNk9ZRk3QMc&ehbc=2E312F"
     },
     {
         "cardimage":"./images/italian2.jpeg",
         "title": "Col'Cacchio",
         "details": "Col'Cacchio serves delicious wood-fired pizzas, sumptuous pastas and gourmet salads that send taste buds into a wild frenzy.",
-        "link": "https://www.colcacchio.co.za"
+        "link": "https://www.colcacchio.co.za",
+        "location" : "https://www.google.com/maps/d/embed?mid=16thAQrVieNnVnpeC-RQnkRntfHmmgqE&ehbc=2E312F"
     },
     {
         "cardimage":"./images/italian4.jpeg",
         "title": "PRIMI",
         "details": "We strive to perfect the overall eating experience with a masterful display of traditional culinary simplicity and complexity in perfect harmony within our vibrant South African URBAN landscape.",
-        "link": "https://www.primi-world.co.za"
+        "link": "https://www.primi-world.co.za",
+        "location" : "https://www.google.com/maps/d/embed?mid=1AbWkXy2T8--bm2Jk7BxhU6vWr1bvijU&ehbc=2E312F"
     },          
     {
         "cardimage":"./images/italian3.jpeg",
         "title": "il Leone Mastrantonio",
         "details": "Il Leone offers a sophisticated atmosphere, with the same delicious standard of food that Mastrantonio patrons have come to love and know.",
-        "link": "https://mastrantonio.com/il-leone-mastrantonio/"
+        "link": "https://mastrantonio.com/il-leone-mastrantonio/",
+        "location" : "https://www.google.com/maps/d/embed?mid=1hAMCmLDmyvQRBiKWJX11Y2sQ0k2q4EI&ehbc=2E312F"
     }
 ]
