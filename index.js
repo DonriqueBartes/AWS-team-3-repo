@@ -40,7 +40,7 @@ function reply_click(clicked_id)
                     <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                        <h4><b>Where can you find me?</b></h4>
+                        <h4><b>Where can you find this place?</b></h4>
                         </div>
                             <div class="modal-body">
                                 <p>
