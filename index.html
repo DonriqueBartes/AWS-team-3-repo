@@ -7,13 +7,16 @@
         <title>Select Your Taste</title>
     
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="index.js"></script>
-
+    
     <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Akaya Telivigala' rel='stylesheet'>
+    
+    
 </head>
 
 <body class ="body">
@@ -23,7 +26,6 @@
         <img class="logo-image" src="./images/select-your-taste.png">
     </header>
 
-    
     <!--Navi for food selection-->
     
         <!-- Done: Category Navigation Bar-->
@@ -31,6 +33,9 @@
             <button id="italian" class='btn-catg' onclick='findFood(this.value)' value="italian">Italian </button>
             <button id="steak" class='btn-catg' onclick='findFood(this.value)' value="steakhouses">Steakhouses</button>
             <button id="sushi" class='btn-catg' onclick='findFood(this.value)' value="sushi">Sushi</button>
+            <button id="indian" class='btn-catg' onclick='findFood(this.value)' value="indian">Indian</button>
+            <button id="dessert" class='btn-catg' onclick='findFood(this.value)' value="dessert">Dessert</button>
+            <button id="coffee" class='btn-catg' onclick='findFood(this.value)' value="coffee">Coffee</button>
         </div>
     
             <div >
@@ -40,8 +45,16 @@
                     </div>
                 </div>
             </div>
-            
 
-    <!-- To Do: Footer(Unplanned) -->
+            <!-- Calls Modal -->
+            <div class= "data-out" id="output-stuff"></div>
+       
+    <!-- Done: Footer -->
+    <header>
+      <div class ="footer">
+        <h3>Website Proudly Built by: <b>Team 3 - Fairly Odd Parents</b></h3>
+      </div>
+  </header>
+
 </body>
 </html>
