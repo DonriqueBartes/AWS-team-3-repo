@@ -1,0 +1,23 @@
+[
+    {
+        "cardimage":"./images/coffee1.jpeg",
+        "title": "Bootlegger Coffee Company",
+        "details": "Sourced from Central Africa and South America, our beans are 100% sustainably sourced and locally made at our micro-roastery in Woodstock.",
+        "link": "https://www.bootlegger.coffee",
+        "location": "https://www.google.com/maps/d/embed?mid=1WxdFLyYU4wBriLtbHiU4cP2eXSDCjMA&ehbc=2E312F"
+    },
+    {
+        "cardimage":"./images/coffee2.jpeg",
+        "title": "Seattle Coffee Company",
+        "details": "Seattle Coffee Company provides a range of sweet treats and savoury foods for customers to indulge in while they sit back and relax.",
+        "link": "https://www.seattlecoffeecompany.co.za",
+        "location": "https://www.google.com/maps/d/embed?mid=18_rzjIz5h2B3t_c9eg9XJVh7s8pqx58&ehbc=2E312F"
+    },          
+    {
+        "cardimage":"./images/coffee3.jpeg",
+        "title": "Starbucks",
+        "details": "To inspire and nurture the human spirit – one person, one cup and one neighbourhood at a time.",
+        "link": "https://www.starbucks.co.za",
+        "location": "https://www.google.com/maps/d/embed?mid=1abaIENaoB32M1z7VS6rS0yuZcZh1d04&ehbc=2E312F"
+    }
+]
