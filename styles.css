@@ -6,11 +6,17 @@
  }
 
 .body{
-  background-color: rgb(0, 0, 0);
-  color: black;
+  color: transparent;
   text-align: center;
   border: 10px solid;
   font-family: 'baskerville', serif;
+  background-image: url("/images/updated_background.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  border-radius: 20px;
+  margin-top: 20px;
+  width: auto;
 }
 
 .table-main{
@@ -61,13 +67,13 @@ h1{
   color: #118d15;
 }
 
- h2{
-  margin: auto  ;
-  font-size: xx-large;
+h2{
+  margin: auto ;
+  font-size: x-large;
   font-family: 'baskerville', serif;
  }
 
- h3{
+h3{
   margin: auto  ;
   height: 100px;
   font-size: medium;
@@ -76,11 +82,18 @@ h1{
   margin: 15px;
  }
 
+ p{
+  font-size: large;
+  text-align: center;
+  padding: 13px ;
+  font-family: 'baskerville', serif;
+ }
+
  
 .btn-catg{
     font-size: x-large;
     font-family: 'baskerville', serif;
-    border-radius: 200px;
+    border-radius: 30px;
     text-align: center;
     padding: 15px;
     display:inline-block;
@@ -88,13 +101,20 @@ h1{
     margin: 10px;
     margin-left: 0px;
     margin-right: 0px;
+    border: 8px solid rgb(255, 191, 96);
   }
 
 .btn-catg:hover{
     background-image: url("./.png");
-    color: rgb(51, 209, 3);
-    transform: scale(1.4);
+    background-color: #080808;
+    border: 1px solid #d68a17;
+    color: #ffffff;
+    transform: scale(1.2);
     transition: all 1s ease;
+}
+
+.btn-catg:active{
+  background-color: #080808;
 }
 
 .container{
@@ -111,19 +131,18 @@ h1{
   border-radius: 20px;
   margin-top: 20px;
   width: auto;
-
 }
 
 .container-button{
-  background-color: #7ed957;
+  background-color: transparent;
   border-radius: 35px;
-  word-spacing: 80px;  
-  
+  word-spacing: 70px;  
+  color: #080808;
 }
 
 img{
   width:100%;
-  height:100%;
+  height:50%;
   align-content: center;
 }
 
@@ -141,13 +160,13 @@ img{
 }
 
 .card{
-    background-color: rgb(255, 255, 255);
-    width: 300px;
-    margin: 45px;
-    border-radius: 15px;
-    transition: transform 500ms;
-    border: 2px solid;
-
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  margin: 45px;
+  border-radius: 15px;
+  transition: transform 500ms;
+  border: 2px solid;
+  color: #080808;
 }
 
 .card-image{
@@ -157,18 +176,17 @@ img{
   background-size: cover;
   border-radius: 15px 15px 0 0;
   border: 1px solid;
-
 }
 
 .card:hover{
-    background-color: rgb(255, 218, 116);
+    background-color: rgb(255, 233, 199);
     color: black;
     transform: scale(1.1);
     transition: all 0.5s ease;
   }
 
 .card-button{
-  background-color: rgb(223, 161, 81);
+  background-color: rgb(252, 204, 142);
   border-radius: 12px;
   color: rgb(0, 0, 0);
   padding: 10px 10px;
@@ -188,15 +206,16 @@ img{
 }
 
 .logo-image{
-  height: auto;
-  width: 35%;
+  width: 15%;
   position: relative;
   margin: auto;
+  margin-bottom: 25px;
+  border-radius: 100px;
 }
 
 .map-container{
   border: 3px solid;
-  border-color: #ffffff;
+  border-color: #000000;
   border-radius: 23px;
   width:800px;
   height:500px;
@@ -210,3 +229,4 @@ img{
   width: auto;
   text-align-last: center;
 }
+

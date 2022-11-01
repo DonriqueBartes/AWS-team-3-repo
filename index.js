@@ -4,17 +4,16 @@ async function findFood(selectedValue)
     let foodChoice = await data.json();
 
     console.log(foodChoice)
-
     let foodHolder = document.querySelector("#data-output")
     let output = "";
 
     for(let place of foodChoice){
         output += ` 
-        <div>
+        <div id ="content-open">
             <div class = "card">                                       
                 <img class = "card-image" src="${place.cardimage}">
-                <h2>${place.title}</h2>
-                <p>${place.details}<p>
+                <h2 style ="font-weight: bold;">${place.title}</h2>
+                <p>${place.details}</p>
                 <div class = "card-button-container">
                     <button class ="card-button" onclick="window.location.href='${place.link}';">Visit ${place.title}</button>
                     <button class ="card-button" id="${place.location}" onClick="reply_click(this.id)" data-toggle="modal" data-target="#myModal">Map</button>
@@ -40,7 +39,7 @@ function reply_click(clicked_id)
                     <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                        <h4><b>Where can you find this place?</b></h4>
+                        <h4 style="color: black;"><b>Where can you find this place?</b></h4>
                         </div>
                             <div class="modal-body">
                                 <p>

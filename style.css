@@ -7,12 +7,15 @@
   body {
     font-family: "Roboto";
     font-size: 14px;
-    background-size: 200% 100% !important;
-    -webkit-animation: move 10s ease infinite;
-            animation: move 10s ease infinite;
     transform: translate3d(0, 0, 0);
-    background: black;
-    height: 100vh;
+
+    background-image: url("/images/updated_background.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    border-radius: 20px;
+    margin-top: 20px;
+    width: auto;
   }
   
   .user {
@@ -27,6 +30,7 @@
     height: auto;
     position: relative;
     top: -10px;
+    border-radius: 100px;
   }
   
   .user__header {
@@ -84,12 +88,12 @@
     -webkit-appearance: none;
     outline: 0;
     border: 0;
-    color: white;
-    background: #7ed957;
+    color: rgb(3, 3, 3);
+    background: #d1ad76;
     transition: 0.3s;
   }
   .btn:hover {
-    background: #38a04e;
+    background: #e2aa55;
   }
   
   @-webkit-keyframes NO {

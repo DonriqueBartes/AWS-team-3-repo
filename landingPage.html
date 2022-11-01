@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        
+        <title>Select Your Taste</title>
+    
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+    
+    <link rel="stylesheet" type='text/css' href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Akaya Telivigala' rel='stylesheet'>
+    
+   
+</head>
+
+<body class ="body">
+    
+    <!-- Done: Header -->
+    <header>
+        <img class="logo-image" src="./images/logo.png">
+    </header>
+
+    <!--Navi for food selection-->
+    
+        <!-- Done: Category Navigation Bar-->
+        <div class = "container-button">
+            <button id="italian" class='btn-catg' onclick='findFood(this.value);animation()' value="italian">Italian </button>
+            <button id="steak" class='btn-catg' onclick='findFood(this.value);animation()' value="steakhouses">Steakhouses</button>
+            <button id="sushi" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="sushi">Sushi</button>
+            <button id="indian" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="indian">Indian</button>
+            <button id="dessert" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="dessert">Dessert</button>
+            <button id="coffee" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="coffee">Coffee</button>
+        </div>
+        
+            <div >
+                <div class="container-image">
+                    <!-- Calls to the json file to get restuarant details -->
+                    <div class= "data-out" id="data-output">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calls Modal -->
+            <div class= "data-out" id="output-stuff"></div>
+       
+    <!-- Done: Footer 
+    <header>
+      <div id = "goHere" class ="footer">
+        <h3 style="color: #d1ad76;">Website Proudly Built by: <b>Team 3 - Fairly Odd Parents</b></h3>
+      </div>
+    </header> -->
+
+</body>
+</html>
