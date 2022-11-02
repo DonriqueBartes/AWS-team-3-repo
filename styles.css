@@ -6,17 +6,24 @@
  }
 
 .body{
-  background-color: rgb(0, 0, 0);
+  color: transparent;
   text-align: center;
   border: 10px solid;
   font-family: 'baskerville', serif;
+  background-image: url("/images/updated_background.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  border-radius: 20px;
+  margin-top: 20px;
+  width: auto;
 }
 
 .table-main{
   margin-left: auto;
   margin-right: auto;
   margin-top: 80px;
-  background-color: rgb(184, 184, 184);
+  background-color: rgb(0, 0, 0);
   width: 1500px;
   height: 500px;
   border-color: black;
@@ -53,13 +60,20 @@
     border: 1px solid;
   }
 
- h2{
+h1{
   margin: auto  ;
   font-size: xx-large;
   font-family: 'baskerville', serif;
+  color: #118d15;
+}
+
+h2{
+  margin: auto ;
+  font-size: x-large;
+  font-family: 'baskerville', serif;
  }
 
- h3{
+h3{
   margin: auto  ;
   height: 100px;
   font-size: medium;
@@ -68,23 +82,39 @@
   margin: 15px;
  }
 
+ p{
+  font-size: large;
+  text-align: center;
+  padding: 13px ;
+  font-family: 'baskerville', serif;
+ }
+
  
 .btn-catg{
     font-size: x-large;
     font-family: 'baskerville', serif;
-    border-radius: 200px;
+    border-radius: 30px;
     text-align: center;
-    padding: 35px;
+    padding: 15px;
     display:inline-block;
-    width: 250px;
-    margin: 30px;
+    width: 180px;
+    margin: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 8px solid rgb(255, 191, 96);
   }
 
 .btn-catg:hover{
     background-image: url("./.png");
-    color: rgb(51, 209, 3);
-    transform: scale(1.4);
+    background-color: #080808;
+    border: 1px solid #d68a17;
+    color: #ffffff;
+    transform: scale(1.2);
     transition: all 1s ease;
+}
+
+.btn-catg:active{
+  background-color: #080808;
 }
 
 .container{
@@ -100,19 +130,19 @@
   background-size: cover;
   border-radius: 20px;
   margin-top: 20px;
-
+  width: auto;
 }
 
 .container-button{
-  background-color: #7ed957;
-  border-radius: 75px;
-  word-spacing: 80px;  
-  
+  background-color: transparent;
+  border-radius: 35px;
+  word-spacing: 70px;  
+  color: #080808;
 }
 
 img{
   width:100%;
-  height:100%;
+  height:50%;
   align-content: center;
 }
 
@@ -123,51 +153,80 @@ img{
  
 }
 
-.card{
-    background-color: rgb(255, 255, 255);
-    width: 300px;
-    margin: 45px;
-    border-radius: 15px;
-    transition: transform 500ms;
-    border: 2px solid;
+.card-button-container{
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
 
+.card{
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  margin: 45px;
+  border-radius: 15px;
+  transition: transform 500ms;
+  border: 2px solid;
+  color: #080808;
 }
 
 .card-image{
   background-image: url();
-  height: 200px;
+  height: 230px;
   margin-bottom: 15px;
   background-size: cover;
   border-radius: 15px 15px 0 0;
   border: 1px solid;
-
 }
 
 .card:hover{
-    background-color: rgb(255, 218, 116);
+    background-color: rgb(255, 233, 199);
     color: black;
     transform: scale(1.1);
     transition: all 0.5s ease;
   }
 
 .card-button{
-  background-color: black;
-  color: rgb(255, 255, 255);
-  padding: 15px 20px;
+  background-color: rgb(252, 204, 142);
+  border-radius: 12px;
+  color: rgb(0, 0, 0);
+  padding: 10px 10px;
   display: block;
   text-align: center;
-  margin: 20px 50px;
   margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
   cursor: pointer;
 }
 
 .card-button:hover{
-  background-color: #4CAF50;
+  background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+    transition: all 0.5s ease;
 }
 
 .logo-image{
-  height: auto;
-  width: 35%;
+  width: 15%;
   position: relative;
   margin: auto;
+  margin-bottom: 25px;
+  border-radius: 100px;
 }
+
+.map-container{
+  border: 3px solid;
+  border-color: #000000;
+  border-radius: 23px;
+  width:800px;
+  height:500px;
+}
+
+.footer{
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 10px;
+  color: #616161;
+  height: auto;
+  width: auto;
+  text-align-last: center;
+}
+

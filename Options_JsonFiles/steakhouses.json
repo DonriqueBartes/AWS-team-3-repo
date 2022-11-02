@@ -4,28 +4,27 @@
         "title": "Iron Steak and Bar ",
         "details": "IRON STEAK AND BAR, where you can enjoy a range of world class dishes including mouth-watering steaks flame grilled to perfection on our imported Spanish Vulcano Grez grill.",
         "link": "http://www.ironsteak.co.za",
-        "location": "https://www.google.com/maps/place/Iron+Steak+and+Bar+Restaurant/@-33.9218306,18.4169943,17z/data=!3m1!4b1!4m6!3m5!1s0x1dcc67d5c02f878d:0xe12b5b30127f4c5c!8m2!3d-33.9218306!4d18.4169943!16s%2Fg%2F11h7ypvcdz"
-
+        "location" : "https://www.google.com/maps/d/embed?mid=1Pa_fTp_z4xbMqqo5sWjIlSzUhc7bnqA&ehbc=2E312F"
     },
     {
         "cardimage":"./images/steak2.jpeg",
         "title": "The Butcher Shop and Grill",
         "details": "The Butcher Shop and Grill offers the best red meat and wine meals. Best meat restaurant, best private dining, butcher shop in Cape Town.",
         "link": "https://www.thebutchershop.co.za",
-        "location": "https://www.google.com/maps/place/The+Butcher+Shop+%26+Grill/@-33.9015817,18.4005731,17z/data=!3m1!4b1!4m6!3m5!1s0x1dcc673434405983:0x464c1f09228700e8!8m2!3d-33.9015817!4d18.4005731!16s%2Fg%2F11bbwmgnyb"
+        "location" : "https://www.google.com/maps/d/u/0/embed?mid=1kOp5gbp7KILzEJHftDUJ777a5f7GbK8&ehbc=2E312F"
     },          
     {
         "cardimage":"./images/steak3.jpeg",
         "title": "City Grill Steakhouse",
         "details": "City Grill is based on a one-of-a-kind food concept showcasing South African Traditional food fare that we are known and loved for around the world.",
         "link": "https://www.citygrill.co.za",
-        "location": "https://www.google.com/maps/place/City+Grill+Steakhouse/@-33.9040327,18.420735,17z/data=!3m2!4b1!5s0x1dcc6750c71e8ca3:0xae90d9bf3e86fe80!4m6!3m5!1s0x1dcc67c1b1d5a87f:0x776d5b76d93d37c7!8m2!3d-33.9040327!4d18.420735!16s%2Fg%2F1tczmrlj"
+        "location" : "https://www.google.com/maps/d/u/0/embed?mid=1Pi2ZMXGfPD6C4LW1o6nZ7tS6GBVBZug&ehbc=2E312F"
     },
     {
         "cardimage":"./images/steak4.jpeg",
         "title": "The Hussar Grill",
         "details": "The Hussar Grill welcomes you into the world of one of South Africa's premier grill rooms.",
         "link": "https://www.hussargrill.co.za",
-        "location": "https://www.google.com/maps/search/The+HUSSAR+GRILL/@-33.9040327,18.420735,12z/data=!3m1!4b1"
+        "location" : "https://www.google.com/maps/d/u/0/embed?mid=1TfT37tDEFd0qVSY2A_DM_bJOljMwknQ&ehbc=2E312F"
     }
 ]
