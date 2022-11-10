@@ -11,9 +11,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
   font-size: x-large;
-  font-family: 'baskerville', serif;
   background-color: #f1f1f1;
-  color: #000000;
+  color: #ffc77d;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
@@ -21,6 +20,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   position: fixed;
   right: 25px;
   width: 200px;
+  background: transparent;
 }
 
 /* The popup form - hidden by default */
@@ -29,16 +29,20 @@ body {font-family: Arial, Helvetica, sans-serif;}
   display: none;
   position: fixed;
   right: 15px;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
+  top: 15px;
 }
+
 
 /* Add styles to the form container */
 .form-container {
   max-width: 300px;
   padding: 10px;
   background-color: #f1f1f1;
+  border-radius: 24px;
+  font-family: 'baskerville', serif;
+  animation: crescendo 400ms ease-in;
 }
+
 
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
@@ -46,36 +50,42 @@ body {font-family: Arial, Helvetica, sans-serif;}
   padding: 15px;
   margin: 5px 0 22px 0;
   border: none;
-  background: #f1f1f1;
+  background: #e0e0e0;
+  border-radius: 20px;
+  text-align: center;
 }
 
 /* When the inputs get focus, do something */
 .form-container input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
+  background-color: rgb(206, 206, 206);
   outline: none;
 }
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-  background-color: #04aa6d;
-  color: #f1f1f1;
+  background-color: #fda93b;
+  border-radius: 20px;
+  color: #020101;
   padding: 16px 20px;
-  border: none;
   cursor: pointer;
   width: 100%;
   margin-bottom:20px;
   opacity: 0.8;
+  letter-spacing: 1px;
+  font-size: large;
 }
+
 
 /* Add a red background color to the cancel button */
 .form-container .cancel {
-  background-color: #ff0000;
+  background-color: #fda93b;
 }
 
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
 
 .body{
   color: transparent;
@@ -133,10 +143,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
   }
 
 h1{
-  margin: auto  ;
+  margin: 15px;
   font-size: xx-large;
   font-family: 'baskerville', serif;
-  color: #118d15;
+  color: #946000;
 }
 
 h2{
@@ -225,20 +235,30 @@ img{
  
 }
 
+.card-description{
+  margin: 20px;
+  height: 115px;
+  font-size: large;
+}
+
 .card-button-container{
+  height: 100px;
   display: flex;
   justify-content: center;
   border-radius: 5px;
+  bottom: 100px;
 }
 
 .card{
   background-color: #f1f1f1;
-  width: 300px;
+  height: 540px;
+  width: 325px;
   margin: 45px;
   border-radius: 15px;
   transition: transform 500ms;
   border: 2px solid;
   color: #080808;
+  animation: crescendo 800ms ease-in;
 }
 
 .card-image{
@@ -251,28 +271,30 @@ img{
 }
 
 .card:hover{
-    background-color: #ffccff;
+    background-color: #ffde95;
     color: #000000;
     transform: scale(1.1);
     transition: all 0.5s ease;
   }
 
 .card-button{
-  background-color: #ffccff;
+  background-color: #0f0f0f;
   border-radius: 12px;
-  color: #000000;
+  color: #dd9804;
   padding: 10px 10px;
   display: block;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   cursor: pointer;
+  letter-spacing: 1px;
 }
 
 .card-button:hover{
-  background-color: #000000;
-    color: #f1f1f1;
+  background-color: #ffffff;
+    color: #050505;
     transform: scale(1.1);
     transition: all 0.5s ease;
 }
@@ -302,3 +324,8 @@ img{
   text-align-last: center;
 }
 
+@keyframes crescendo {
+  0%   {transform: scale(.7); opacity: 0%;}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}

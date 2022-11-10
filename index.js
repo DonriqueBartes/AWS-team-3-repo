@@ -1,30 +1,30 @@
 async function findFood(selectedValue)
 {
-    let data = await fetch("Options_JsonFiles/"+selectedValue+".json")
-    let foodChoice = await data.json();
-
-    console.log(foodChoice)
-    let foodHolder = document.querySelector("#data-output")
-    let output = "";
-
-    for(let place of foodChoice){
-        output += ` 
-        <div id ="content-open">
-            <div class = "card">                                       
-                <img class = "card-image" src="${place.cardimage}">
-                <h2 style ="font-weight: bold;">${place.title}</h2>
-                <p>${place.details}</p>
-                <div class = "card-button-container">
-                    <button class ="card-button" onclick="window.location.href='${place.link}';">Visit ${place.title}</button>
-                    <button class ="card-button" id="${place.location}" onClick="reply_click(this.id)" data-toggle="modal" data-target="#myModal">Map</button>
+        let data = await fetch("Options_JsonFiles/"+selectedValue+".json")
+        let foodChoice = await data.json();
+        let foodHolder = document.querySelector("#data-output")
+        let output = "";
+        
+        for(let place of foodChoice){
+            output += ` 
+            <div id ="content-open">
+                <div class = "card">                                       
+                    <img class = "card-image" src="${place.cardimage}">
+                    <h2 style ="font-weight: bold;">${place.title}</h2>
+                    <div class ="card-description">${place.details}</div>
+                    <div class = "card-button-container">
+                        <button class ="card-button" onclick="window.location.href='${place.link}';">Visit ${place.title}</button>
+                        <button class ="card-button" id="${place.location}" onClick="reply_click(this.id)" data-toggle="modal" data-target="#myModal">Map</button>
+                    </div>
+                    
                 </div>
-                
             </div>
-        </div>
-        `;
-        }
-    foodHolder.innerHTML = output;
+            `;
+            }
+        foodHolder.innerHTML = output;
+        console.log(foodChoice)
 }
+
 
 function reply_click(clicked_id)
 {
@@ -54,3 +54,19 @@ function reply_click(clicked_id)
         </div>
     </div>`;
 }
+
+function openForm() {
+    document.getElementById("loginForm").style.display = "block";
+  }
+  function openRegister() {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("registerForm").style.display = "block";
+  }
+  function closeLogin() {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("registerForm").style.display = "none";
+  }
+  function closeRegister() {
+    document.getElementById("loginForm").style.display = "block";
+    document.getElementById("registerForm").style.display = "none";
+  }

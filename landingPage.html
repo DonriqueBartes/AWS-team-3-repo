@@ -1,57 +1,53 @@
 <!DOCTYPE html>
-<html>
-<head>
-    
+<html><head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
         
         <title>Select Your Taste</title>
+        <link rel="icon" type="image/x-icon" href="/images/logo.png">
     
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="index.js"></script>
-    
-    <link rel="stylesheet" type='text/css' href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Akaya Telivigala' rel='stylesheet'>
-    
-   
+    <link rel="stylesheet" type='text/css' href="styles.css">
 </head>
 
 <body class ="body">
 
-    <button class="open-button" onclick="openForm()">Login/Sign Up</button>
+    <button id="formid" class="open-button" onclick="openForm(),animateForm()">Login/Sign Up</button>
 
-<div class="form-popup" id="myForm">
-  <form class="form-container">
-    <h1>Login</h1>
+    <div id="loginForm" class="form-popup">
+      <form class="form-container">
+        <h1>Login</h1>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+        <input type="text" placeholder="Email" name="email" required>
+        <input type="password" placeholder="Password" name="psw" required>
+        
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel" onclick="closeLogin()">Close</button>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+        <button id="" onclick=openRegister() style="background: transparent; border: transparent; color: rgb(161, 105, 0);">Don't have an account? Sign up</a>
+      </form>
+    </div>
 
+    <div id="registerForm" class="form-popup">
+      <form class="form-container">
+        <h1>Register</h1>
 
-    <button type="submit" class="btn">Login</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-    <a href="#">Don't have an account? Sign up</a>
-  </form>
-</div>
-</body>
+        <input type="text" placeholder="Username" name="name" required>
+        <input type="text" placeholder=" Email" name="email" required>   
+        <input type="password" placeholder="Password" name="psw" required>
+        <input type="password" placeholder="Password" name="psw" required>
 
-<script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
+        <button type="submit" class="btn">Register</button>
+        <button type="button" class="btn cancel" onclick="closeRegister()">Close</button>
+      </form>
+    </div>
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-</script>
-    
     <!-- Done: Header -->
     <header>
         <img class="logo-image" src="./images/logo.png">
@@ -59,33 +55,24 @@ function closeForm() {
 
     <!--Navi for food selection-->
     
-        <!-- Done: Category Navigation Bar-->
-        <div class = "container-button">
-            <button id="italian" class='btn-catg' onclick='findFood(this.value);animation()' value="italian">Italian </button>
-            <button id="steak" class='btn-catg' onclick='findFood(this.value);animation()' value="steakhouses">Steakhouses</button>
-            <button id="sushi" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="sushi">Sushi</button>
-            <button id="indian" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="indian">Indian</button>
-            <button id="dessert" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="dessert">Dessert</button>
-            <button id="coffee" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="coffee">Coffee</button>
-        </div>
-        
-            <div >
-                <div class="container-image">
-                    <!-- Calls to the json file to get restuarant details -->
-                    <div class= "data-out" id="data-output">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Calls Modal -->
-            <div class= "data-out" id="output-stuff"></div>
-       
-    <!-- Done: Footer 
-    <header>
-      <div id = "goHere" class ="footer">
-        <h3 style="color: #d1ad76;">Website Proudly Built by: <b>Team 3 - Fairly Odd Parents</b></h3>
+      <!-- Done: Category Navigation Bar-->
+      <div class = "container-button">
+          <button id="italian" class='btn-catg' onclick='findFood(this.value);animation()' value="italian">Italian </button>
+          <button id="steak" class='btn-catg' onclick='findFood(this.value);animation()' value="steakhouses">Steakhouses</button>
+          <button id="sushi" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="sushi">Sushi</button>
+          <button id="indian" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="indian">Indian</button>
+          <button id="dessert" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="dessert">Dessert</button>
+          <button id="coffee" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="coffee">Coffee</button>
       </div>
-    </header> -->
+    
+    <div class="container-image">
+        <!-- Calls to the json file to get restuarant details -->
+        <div class= "data-out" id="data-output"></div>
+    </div>
 
-</body>
+    <!-- Calls Modal -->
+    <div class= "data-out" id="output-stuff"></div>
+
+<!-- END OF PAGE -->
+</body> 
 </html>
