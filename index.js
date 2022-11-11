@@ -16,7 +16,6 @@ async function findFood(selectedValue)
                         <button class ="card-button" onclick="window.location.href='${place.link}';">Visit ${place.title}</button>
                         <button class ="card-button" id="${place.location}" onClick="reply_click(this.id)" data-toggle="modal" data-target="#myModal">Map</button>
                     </div>
-                    
                 </div>
             </div>
             `;
