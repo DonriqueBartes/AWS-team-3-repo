@@ -22,7 +22,6 @@ async function findFood(selectedValue)
             `;
             }
         foodHolder.innerHTML = output;
-        console.log(foodChoice)
 }
 
 
