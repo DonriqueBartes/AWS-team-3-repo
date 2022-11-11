@@ -1,8 +1,8 @@
 async function findFood(selectedValue)
 {
-        let data = await fetch("./files/"+selectedValue+".json")
+        let data = await fetch(`./files/${selectedValue}.json`);
         let foodChoice = await data.json();
-        let foodHolder = document.querySelector("#data-output")
+        let foodHolder = document.querySelector("#data-output");
         let output = "";
         
         for(let place of foodChoice){
@@ -26,7 +26,7 @@ async function findFood(selectedValue)
 
 function reply_click(clicked_id)
 {
-    let placeHolder = document.querySelector("#output-stuff")
+    let placeHolder = document.querySelector("#output-stuff");
     placeHolder.innerHTML = `
     <div class = "container">
         <div class="modal fade" id="myModal" role="dialog">
