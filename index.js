@@ -1,6 +1,6 @@
 async function findFood(selectedValue)
 {
-        let data = await fetch("Options_JsonFiles/"+selectedValue+".json")
+        let data = await fetch("Options-JsonFiles/"+selectedValue+".json")
         let foodChoice = await data.json();
         let foodHolder = document.querySelector("#data-output")
         let output = "";
