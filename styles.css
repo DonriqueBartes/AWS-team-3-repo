@@ -50,7 +50,7 @@ body {}
 
 
 /* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
+.form-container input[type=personalname], .form-container input[type=email], .form-container input[type=password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -89,6 +89,17 @@ body {}
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
+}
+
+.formbutton{
+  background: transparent; 
+  border: transparent; 
+  color: #a16900;
+}
+
+.formbutton:hover{
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 
