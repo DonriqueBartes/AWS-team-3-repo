@@ -26,51 +26,14 @@
       <form class="form-container">
         <h1>Login</h1>
 
-        <input type="email" placeholder="Email" name="email" required>
-        <input type="password" placeholder="Password" name="loginPassword" required>
+        <input type="email" id="inputUsername" placeholder="Email" name="email" required>
+        <input type="password" id="inputPassword" placeholder="Password" name="loginPassword" required>
         
-        <button type="button" class="btn">Login</button>
+        <button type="button" class="btn" onclick="signInButton()">Login</button>
         <button type="button" class="btn cancel" onclick="closeLogin()">Close</button>
 
         <button type="button" class="formbutton" id="" onclick=openRegister()>Don't have an account? Sign up</a>
       </form>
-      <script>
-        
-        function signInButton() {
-
-          var authenticationData = {
-              Username : document.getElementById("inputUsername").value,
-              Password : document.getElementById("inputPassword").value,
-          };
-
-          var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
-      
-          var poolData = {
-              UserPoolId : _config.cognito.userPoolId, // Your user pool id here
-              ClientId : _config.cognito.clientId, // Your client id here
-          };
-
-          var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-          var userData = {
-              Username : document.getElementById("inputUsername").value,
-              Pool : userPool,
-          };
-
-          var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
-          
-          cognitoUser.authenticateUser(authenticationDetails, {
-              onSuccess: function (result) {
-                  var accessToken = result.getAccessToken().getJwtToken();
-                  console.log(accessToken);
-              },
-
-              onFailure: function(err) {
-                  alert(err.message || JSON.stringify(err));
-              },
-          });
-        }      
-      </script>
-
 
 
     </div>
