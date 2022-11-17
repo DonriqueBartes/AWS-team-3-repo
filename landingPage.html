@@ -11,24 +11,71 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> <!--this is important-->
+  <script src="node_modules/amazon-cognito-auth-js/dist/amazon-cognito-auth.min.js"></script>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script> <!--this is important-->
+  
+  <!--How to use cognito is at https://github.com/aws/aws-amplify/tree/master/packages/amazon-cognito-identity-js-->
+  <script src="node_modules/amazon-cognito-identity-js/dist/amazon-cognito-identity.min.js"></script>  <!--this is very important-->
+  
+  <script src="config.js"></script>
   </head>
 
   <body class ="body">
 
-    <button id="formid" class="open-button" onclick="openForm(),animateForm()">Login/Sign Up</button>
+    <button id="formid" class="open-button" onclick="openForm()">Login/Sign Up</button>
 
     <div id="loginForm" class="form-popup">
       <form class="form-container">
         <h1>Login</h1>
 
-        <input type="text" placeholder="Email" name="email" required>
-        <input type="password" placeholder="Password" name="psw" required>
+        <input type="text" id="inputUsername" placeholder="Email" name="username" required autofocus>
+        <input type="password" id="inputPassword" placeholder="Password" name="password" required>
         
-        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn" onClick="signInButton()">Login</button>
         <button type="button" class="btn cancel" onclick="closeLogin()">Close</button>
 
-        <button id="" onclick=openRegister() style="background: transparent; border: transparent; color: rgb(161, 105, 0);">Don't have an account? Sign up</a>
+        <button id="" type="button" onclick=openRegister() style="background: transparent; border: transparent; color: rgb(161, 105, 0);">Don't have an account? Sign up</a>
       </form>
+      <script>
+        
+        function signInButton() {
+
+          var authenticationData = {
+              Username : document.getElementById("inputUsername").value,
+              Password : document.getElementById("inputPassword").value,
+          };
+
+          var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+      
+          var poolData = {
+              UserPoolId : _config.cognito.userPoolId, // Your user pool id here
+              ClientId : _config.cognito.clientId, // Your client id here
+          };
+
+          var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+          var userData = {
+              Username : document.getElementById("inputUsername").value,
+              Pool : userPool,
+          };
+
+          var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+          
+          cognitoUser.authenticateUser(authenticationDetails, {
+              onSuccess: function (result) {
+                  var accessToken = result.getAccessToken().getJwtToken();
+                  console.log(accessToken);
+              },
+
+              onFailure: function(err) {
+                  alert(err.message || JSON.stringify(err));
+              },
+          });
+        }      
+      </script>
+
+
+
     </div>
 
     <div id="registerForm" class="form-popup">
