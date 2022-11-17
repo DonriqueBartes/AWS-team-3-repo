@@ -91,6 +91,17 @@ body {}
   opacity: 1;
 }
 
+.formbutton{
+  background: transparent; 
+  border: transparent; 
+  color: #a16900;
+}
+
+.formbutton:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 
 .body{
   color: transparent;
