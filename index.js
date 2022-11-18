@@ -176,4 +176,36 @@ function signInButton() {
             alert(err.message || JSON.stringify(err));
         },
     });
-  }      
+  }
+function forgotpasswordButton() {
+  var poolData = {
+      UserPoolId : _config.cognito.userPoolId,
+      ClientId : _config.cognito.clientId,
+  };
+
+  var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+
+  var userData = {
+      Username : document.getElementById("inputUsername").value,
+      Pool : userPool,
+  };
+
+  var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+
+  cognitoUser.forgotPassword({
+      onSuccess: function (result) {
+            console.log('call result: ' + result);
+      },
+      onFailure: function(err) {
+            alert(err);
+            console.log(err);
+      },
+      inputVerificationCode() {
+            var verificationCode = prompt('Please input verification code ' , '');
+            var newPassword = prompt('Enter new password ' ,'');
+            cognitoUser.confirmPassword(verificationCode, newPassword, this);
+      }
+  });
+}
+  
+
