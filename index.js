@@ -87,43 +87,40 @@ function openForm() {
     document.getElementById("registerForm").style.display = "none";
   }
 
-  var username;
-  var password;
-  var personalname;
-  var poolData;
+
       
 function registerButton() {
-  
-  personalnamename =  document.getElementById("personalnameRegister").value;	
-  username = document.getElementById("emailInputRegister").value;
-  
-  if (document.getElementById("passwordInputRegister").value != document.getElementById("confirmationpassword").value) {
-      alert("Passwords Do Not Match!")
-      throw "Passwords Do Not Match!"
-  } else {
-      password =  document.getElementById("passwordInputRegister").value;	
-  }
+    const username = document.getElementById("emailInputRegister").value;
+    const password = document.getElementById("passwordInputRegister").value;
+    const passwordConfirm = document.getElementById("confirmationpassword").value;
+    const personalname = document.getElementById("personalnameRegister").value;
+    let poolData;  
+    
+    if (password != passwordConfirm) {
+        alert("Passwords Do Not Match!");
+        throw "Passwords Do Not Match!";
+    }
   
   poolData = {
           UserPoolId : _config.cognito.userPoolId, // Your user pool id here
           ClientId : _config.cognito.clientId // Your client id here
       };		
-  var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+  const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
-  var attributeList = [];
+  const attributeList = [];
   
-  var dataEmail = {
+  const dataEmail = {
       Name : 'email', 
       Value : username, //get from form field
   };
   
-  var dataPersonalName = {
+  const dataPersonalName = {
       Name : 'name', 
       Value : personalname, //get from form field
   };
 
-  var attributeEmail = new AmazonCognitoIdentity.CognitoUserAttribute(dataEmail);
-  var attributePersonalName = new AmazonCognitoIdentity.CognitoUserAttribute(dataPersonalName);
+  const attributeEmail = new AmazonCognitoIdentity.CognitoUserAttribute(dataEmail);
+  const attributePersonalName = new AmazonCognitoIdentity.CognitoUserAttribute(dataPersonalName);
   
   
   attributeList.push(attributeEmail);
