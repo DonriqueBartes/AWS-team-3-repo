@@ -11,36 +11,44 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="/node_modules/amazon-cognito-auth-js/dist/amazon-cognito-auth.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+    <script src="/node_modules/amazon-cognito-identity-js/dist/amazon-cognito-identity.min.js"></script>
+    <script src="config.js"></script>
   </head>
 
   <body class ="body">
 
-    <button id="formid" class="open-button" onclick="openForm(),animateForm()">Login/Sign Up</button>
+    <button id="formid" class="open-button" onclick="openForm()">Login/Sign Up</button>
 
     <div id="loginForm" class="form-popup">
       <form class="form-container">
         <h1>Login</h1>
 
-        <input type="text" placeholder="Email" name="email" required>
-        <input type="password" placeholder="Password" name="psw" required>
+        <input type="email" id="inputUsername" placeholder="Email" name="email" required>
+        <input type="password" id="inputPassword" placeholder="Password" name="loginPassword" required>
         
-        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn" onclick="signInButton()">Login</button>
         <button type="button" class="btn cancel" onclick="closeLogin()">Close</button>
 
-        <button id="" onclick=openRegister() style="background: transparent; border: transparent; color: rgb(161, 105, 0);">Don't have an account? Sign up</a>
+        <button type="button" class="formbutton" id="" onclick=openRegister()>Don't have an account? Sign up</a>
+        <a href="./forgotpswd.html" class="formbutton" >Forgot Password</a>
       </form>
+
+
     </div>
 
     <div id="registerForm" class="form-popup">
       <form class="form-container">
         <h1>Register</h1>
 
-        <input type="text" placeholder="Username" name="name" required>
-        <input type="text" placeholder=" Email" name="email" required>   
-        <input type="password" placeholder="Password" name="psw" required>
-        <input type="password" placeholder="Password" name="psw" required>
+        <input type="personalname" id="personalnameRegister" placeholder="Username" name="name" required>
+        <input type="email" id="emailInputRegister" placeholder=" Email" name="email" required>   
+        <input type="password" id="passwordInputRegister" placeholder="Password" name="psw" required>
+        <input type="password" id="confirmationpassword" placeholder="Password" name="psw" required>
 
-        <button type="submit" class="btn">Register</button>
+        <button type="button" id="registerBtn" class="btn" onclick="registerButton()">Register</button>
         <button type="button" class="btn cancel" onclick="closeRegister()">Close</button>
       </form>
     </div>

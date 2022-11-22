@@ -86,3 +86,125 @@ function openForm() {
     document.getElementById("loginForm").style.display = "block";
     document.getElementById("registerForm").style.display = "none";
   }
+
+
+      
+function registerButton() {
+    const username = document.getElementById("emailInputRegister").value;
+    const password = document.getElementById("passwordInputRegister").value;
+    const passwordConfirm = document.getElementById("confirmationpassword").value;
+    const personalname = document.getElementById("personalnameRegister").value;
+    let poolData;  
+    
+    if (password != passwordConfirm) {
+        alert("Passwords Do Not Match!");
+        throw "Passwords Do Not Match!";
+    }
+  
+  poolData = {
+          UserPoolId : _config.cognito.userPoolId, // Your user pool id here
+          ClientId : _config.cognito.clientId // Your client id here
+      };		
+  const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+
+  const attributeList = [];
+  
+  const dataEmail = {
+      Name : 'email', 
+      Value : username, //get from form field
+  };
+  
+  const dataPersonalName = {
+      Name : 'name', 
+      Value : personalname, //get from form field
+  };
+
+  const attributeEmail = new AmazonCognitoIdentity.CognitoUserAttribute(dataEmail);
+  const attributePersonalName = new AmazonCognitoIdentity.CognitoUserAttribute(dataPersonalName);
+  
+  
+  attributeList.push(attributeEmail);
+  attributeList.push(attributePersonalName);
+
+  userPool.signUp(username, password, attributeList, null, function(err, result){
+      if (err) {
+          alert(err.message || JSON.stringify(err));
+          return;
+      }
+      cognitoUser = result.user;
+      console.log('user name is ' + cognitoUser.getUsername());
+      //change elements of page
+      alert("Check Your Email For Verification");
+      
+  });
+}
+
+function signInButton() {
+
+    const authenticationData = {
+        Username : document.getElementById("inputUsername").value,
+        Password : document.getElementById("inputPassword").value,
+    };
+
+    const authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+
+    const poolData = {
+        UserPoolId : _config.cognito.userPoolId, // Your user pool id here
+        ClientId : _config.cognito.clientId, // Your client id here
+    };
+
+    const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+    const userData = {
+        Username : document.getElementById("inputUsername").value,
+        Pool : userPool,
+    };
+
+    const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+    
+    cognitoUser.authenticateUser(authenticationDetails, {
+        onSuccess: function (result) {
+            const accessToken = result.getAccessToken().getJwtToken();
+            document.getElementById("formid").innerHTML= document.getElementById("inputUsername").value;
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("registerForm").style.display = "none";
+        },
+
+        onFailure: function(err) {
+            alert(err.message || JSON.stringify(err));
+        },
+    });
+  }
+function forgotPasswordButton() {
+
+    const email = document.getElementById("email").value;
+
+  const poolData = {
+      UserPoolId : _config.cognito.userPoolId,
+      ClientId : _config.cognito.clientId,
+  };
+
+  const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+
+  const userData = {
+      Username : email,
+      Pool : userPool,
+  };
+
+  const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+
+  cognitoUser.forgotPassword({
+      onSuccess: function (result) {
+            console.log('call result: ' + result);
+      },
+      onFailure: function(err) {
+            console.log(err);
+      },
+      inputVerificationCode() {
+            const verificationCode = prompt('Please input verification code ' , '');
+            const newPassword = prompt('Enter new password ' ,'');
+            cognitoUser.confirmPassword(email, verificationCode, newPassword);
+            window.location.href = './landingPage.html'
+      }
+  });
+}
+
