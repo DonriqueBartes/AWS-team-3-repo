@@ -141,29 +141,29 @@ function registerButton() {
 
 function signInButton() {
 
-    var authenticationData = {
+    const authenticationData = {
         Username : document.getElementById("inputUsername").value,
         Password : document.getElementById("inputPassword").value,
     };
 
-    var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+    const authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
 
-    var poolData = {
+    const poolData = {
         UserPoolId : _config.cognito.userPoolId, // Your user pool id here
         ClientId : _config.cognito.clientId, // Your client id here
     };
 
-    var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-    var userData = {
+    const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+    const userData = {
         Username : document.getElementById("inputUsername").value,
         Pool : userPool,
     };
 
-    var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+    const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
     
     cognitoUser.authenticateUser(authenticationDetails, {
         onSuccess: function (result) {
-            var accessToken = result.getAccessToken().getJwtToken();
+            const accessToken = result.getAccessToken().getJwtToken();
             document.getElementById("formid").innerHTML= document.getElementById("inputUsername").value;
             document.getElementById("loginForm").style.display = "none";
             document.getElementById("registerForm").style.display = "none";
@@ -174,35 +174,37 @@ function signInButton() {
         },
     });
   }
-function forgotpasswordButton() {
-  var poolData = {
+function forgotPasswordButton() {
+
+    const email = document.getElementById("email").value;
+
+  const poolData = {
       UserPoolId : _config.cognito.userPoolId,
       ClientId : _config.cognito.clientId,
   };
 
-  var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+  const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
-  var userData = {
-      Username : document.getElementById("inputUsername").value,
+  const userData = {
+      Username : email,
       Pool : userPool,
   };
 
-  var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+  const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
 
   cognitoUser.forgotPassword({
       onSuccess: function (result) {
             console.log('call result: ' + result);
       },
       onFailure: function(err) {
-            alert(err);
             console.log(err);
       },
       inputVerificationCode() {
-            var verificationCode = prompt('Please input verification code ' , '');
-            var newPassword = prompt('Enter new password ' ,'');
-            cognitoUser.confirmPassword(verificationCode, newPassword, this);
+            const verificationCode = prompt('Please input verification code ' , '');
+            const newPassword = prompt('Enter new password ' ,'');
+            cognitoUser.confirmPassword(email, verificationCode, newPassword);
+            window.location.href = './landingPage.html'
       }
   });
 }
-  
 
