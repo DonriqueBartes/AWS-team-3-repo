@@ -55,7 +55,7 @@ function reply_click(clicked_id)
     //---Close modal if 'Escape' key is pressed
     document.onkeydown = function(evt) {
         evt = evt || window.event;
-        var isEscape = false;
+        const isEscape = false;
         if ("key" in evt) {
             isEscape = (evt.key === "Escape" || evt.key === "Esc");
         } else {
@@ -140,13 +140,13 @@ function registerButton() {
 }
 
 function signInButton() {
-    var authenticationData = {
+    const authenticationData = {
         Username : document.getElementById("inputUsername").value,
         Password : document.getElementById("inputPassword").value,
     };
 
-    var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
-    var poolData = {
+    const authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+    const poolData = {
         UserPoolId : _config.cognito.userPoolId, // Your user pool id here
         ClientId : _config.cognito.clientId, // Your client id here
     };
@@ -157,7 +157,7 @@ function signInButton() {
         Pool : userPool,
     };
 
-    var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+    const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
     cognitoUser.authenticateUser(authenticationDetails, {
         onSuccess: function (result) {
             const accessToken = result.getAccessToken().getJwtToken();
@@ -167,6 +167,7 @@ function signInButton() {
             document.getElementById("loginForm").style.display = "none";
             document.getElementById("registerForm").style.display = "none";
             console.log(cognitoUser);
+            location.reload();
         },
         onFailure: function(err) {
             alert(err.message || JSON.stringify(err));
@@ -175,18 +176,18 @@ function signInButton() {
   }
 
 function forgotpasswordButton() {
-  var poolData = {
+  const poolData = {
       UserPoolId : _config.cognito.userPoolId,
       ClientId : _config.cognito.clientId,
   };
 
-  var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-  var userData = {
+  const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+  const userData = {
       Username : document.getElementById("inputUsername").value,
       Pool : userPool,
   };
 
-  var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+  const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
   cognitoUser.forgotPassword({
       onSuccess: function (result) {
             console.log('call result: ' + result);

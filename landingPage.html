@@ -86,12 +86,12 @@
   <!-- END OF PAGE -->
   </body> 
   <script>
-    var data = {
+    const data = {
     UserPoolId : _config.cognito.userPoolId,
     ClientId : _config.cognito.clientId
     };
-    var userPool = new AmazonCognitoIdentity.CognitoUserPool(data);
-    var cognitoUser = userPool.getCurrentUser();
+    const userPool = new AmazonCognitoIdentity.CognitoUserPool(data);
+    const cognitoUser = userPool.getCurrentUser();
 
     window.onload = function(){
         if (cognitoUser != null){
