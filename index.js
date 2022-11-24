@@ -4,7 +4,6 @@ async function findFood(selectedValue)
         const foodChoice = await data.json();
         const foodHolder = document.querySelector("#data-output");
         let output = "";
-        
         for(const place of foodChoice){
             output += ` 
             <div id ="content-open">
@@ -22,7 +21,6 @@ async function findFood(selectedValue)
             }
         foodHolder.innerHTML = output;
 }
-
 
 function reply_click(clicked_id)
 {
@@ -70,23 +68,29 @@ function reply_click(clicked_id)
     };
 }
 
-
 function openForm() {
     document.getElementById("loginForm").style.display = "block";
-  }
-  function openRegister() {
+}
+function openRegister() {
     document.getElementById("loginForm").style.display = "none";
     document.getElementById("registerForm").style.display = "block";
-  }
-  function closeLogin() {
+}
+function closeLogin() {
     document.getElementById("loginForm").style.display = "none";
     document.getElementById("registerForm").style.display = "none";
-  }
-  function closeRegister() {
+}
+function closeRegister() {
     document.getElementById("loginForm").style.display = "block";
     document.getElementById("registerForm").style.display = "none";
-  }
-
+}
+function openCurrent(){
+    document.getElementById("current-login").style.display = "block";
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("registerForm").style.display = "none";
+}
+function closeCurrentLogin(){
+    document.getElementById("current-login").style.display = "none";
+}
 
       
 function registerButton() {
@@ -104,11 +108,10 @@ function registerButton() {
   poolData = {
           UserPoolId : _config.cognito.userPoolId, // Your user pool id here
           ClientId : _config.cognito.clientId // Your client id here
-      };		
+      };	
+	
   const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-
   const attributeList = [];
-  
   const dataEmail = {
       Name : 'email', 
       Value : username, //get from form field
@@ -121,11 +124,8 @@ function registerButton() {
 
   const attributeEmail = new AmazonCognitoIdentity.CognitoUserAttribute(dataEmail);
   const attributePersonalName = new AmazonCognitoIdentity.CognitoUserAttribute(dataPersonalName);
-  
-  
   attributeList.push(attributeEmail);
   attributeList.push(attributePersonalName);
-
   userPool.signUp(username, password, attributeList, null, function(err, result){
       if (err) {
           alert(err.message || JSON.stringify(err));
@@ -134,21 +134,19 @@ function registerButton() {
       cognitoUser = result.user;
       console.log('user name is ' + cognitoUser.getUsername());
       //change elements of page
-      alert("Check Your Email For Verification");
-      
+      alert("Check Your Email For Verification"); 
+      location.reload();
   });
 }
 
 function signInButton() {
-
-    const authenticationData = {
+    var authenticationData = {
         Username : document.getElementById("inputUsername").value,
         Password : document.getElementById("inputPassword").value,
     };
 
-    const authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
-
-    const poolData = {
+    var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+    var poolData = {
         UserPoolId : _config.cognito.userPoolId, // Your user pool id here
         ClientId : _config.cognito.clientId, // Your client id here
     };
@@ -159,39 +157,36 @@ function signInButton() {
         Pool : userPool,
     };
 
-    const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
-    
+    var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
     cognitoUser.authenticateUser(authenticationDetails, {
         onSuccess: function (result) {
             const accessToken = result.getAccessToken().getJwtToken();
             document.getElementById("formid").innerHTML= document.getElementById("inputUsername").value;
+            document.getElementById("currentUser").innerHTML = document.getElementById("inputUsername").value;
+            document.getElementById("formid").setAttribute( "onClick","openCurrent();");
             document.getElementById("loginForm").style.display = "none";
             document.getElementById("registerForm").style.display = "none";
+            console.log(cognitoUser);
         },
-
         onFailure: function(err) {
             alert(err.message || JSON.stringify(err));
         },
     });
   }
-function forgotPasswordButton() {
 
-    const email = document.getElementById("email").value;
-
-  const poolData = {
+function forgotpasswordButton() {
+  var poolData = {
       UserPoolId : _config.cognito.userPoolId,
       ClientId : _config.cognito.clientId,
   };
 
-  const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-
-  const userData = {
-      Username : email,
+  var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+  var userData = {
+      Username : document.getElementById("inputUsername").value,
       Pool : userPool,
   };
 
-  const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
-
+  var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
   cognitoUser.forgotPassword({
       onSuccess: function (result) {
             console.log('call result: ' + result);
@@ -207,4 +202,3 @@ function forgotPasswordButton() {
       }
   });
 }
-
