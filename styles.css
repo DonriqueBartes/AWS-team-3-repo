@@ -23,7 +23,6 @@ html *{
   opacity: 0.8;
   float: right;
   right: 25px;
-  width: 200px;
   background: transparent;
 }
 
@@ -79,7 +78,6 @@ html *{
   font-size: large;
 }
 
-
 /* Add a red background color to the cancel button */
 .form-container .cancel {
   background-color: #fda93b;
@@ -94,6 +92,7 @@ html *{
   background: transparent; 
   border: transparent; 
   color: #a16900;
+  padding-bottom: 10px;
 }
 
 .formbutton:hover{
@@ -107,7 +106,7 @@ html *{
   text-align: center;
   border: 10px solid;
   
-  background-image: url("/images/updated_background.jpeg");
+  background-image: url("images/updated_background.jpeg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
@@ -172,7 +171,7 @@ h2{
 
 h3{
   margin: auto;
-  height: 100px;
+  height: 20px;
   font-size: medium;
   margin-top: 10px;
   margin: 15px;
@@ -311,9 +310,8 @@ img{
 
 .logo-image{
   width: 15%;
-  position: relative;
-  left: 5%;
-  margin: auto;
+  margin-left: 42.8%;
+  margin-right: 58%;
   margin-bottom: 25px;
   border-radius: 100px;
 }
@@ -380,6 +378,9 @@ img{
   display: none;
 }
 
+.main-head{
+  width: 100%;
+}
 
 .footer{
   border-radius: 10px;
@@ -393,4 +394,36 @@ img{
   0%   {transform: scale(.7); opacity: 0%;}
   50% {transform: scale(1.1);}
   100% {transform: scale(1);}
+}
+
+@media only screen and (max-width:1000px) {
+  .logo-image{
+    display: block;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .open-button{
+    width: 60%;
+    font-size: large;
+    position: relative;
+    right: 0%;
+    text-align: left;
+    margin-bottom: -20px;
+  }
+
+  .btn-catg{
+    font-size: medium;
+    border-radius: 20px;
+    text-align: center;
+    display:inline-block;
+    width: 180px;
+    height: 50px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+    border: 8px solid #ffb03a;
+  }
 }
