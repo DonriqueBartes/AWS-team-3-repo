@@ -4,7 +4,6 @@ async function findFood(selectedValue)
         const foodChoice = await data.json();
         const foodHolder = document.querySelector("#data-output");
         let output = "";
-        
         for(const place of foodChoice){
             output += ` 
             <div id ="content-open">
@@ -22,7 +21,6 @@ async function findFood(selectedValue)
             }
         foodHolder.innerHTML = output;
 }
-
 
 function reply_click(clicked_id)
 {
@@ -57,7 +55,7 @@ function reply_click(clicked_id)
     //---Close modal if 'Escape' key is pressed
     document.onkeydown = function(evt) {
         evt = evt || window.event;
-        var isEscape = false;
+        const isEscape = false;
         if ("key" in evt) {
             isEscape = (evt.key === "Escape" || evt.key === "Esc");
         } else {
@@ -70,23 +68,29 @@ function reply_click(clicked_id)
     };
 }
 
-
 function openForm() {
     document.getElementById("loginForm").style.display = "block";
-  }
-  function openRegister() {
+}
+function openRegister() {
     document.getElementById("loginForm").style.display = "none";
     document.getElementById("registerForm").style.display = "block";
-  }
-  function closeLogin() {
+}
+function closeLogin() {
     document.getElementById("loginForm").style.display = "none";
     document.getElementById("registerForm").style.display = "none";
-  }
-  function closeRegister() {
+}
+function closeRegister() {
     document.getElementById("loginForm").style.display = "block";
     document.getElementById("registerForm").style.display = "none";
-  }
-
+}
+function openCurrent(){
+    document.getElementById("current-login").style.display = "block";
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("registerForm").style.display = "none";
+}
+function closeCurrentLogin(){
+    document.getElementById("current-login").style.display = "none";
+}
 
       
 function registerButton() {
@@ -104,11 +108,10 @@ function registerButton() {
   poolData = {
           UserPoolId : _config.cognito.userPoolId, // Your user pool id here
           ClientId : _config.cognito.clientId // Your client id here
-      };		
+      };	
+	
   const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-
   const attributeList = [];
-  
   const dataEmail = {
       Name : 'email', 
       Value : username, //get from form field
@@ -121,11 +124,8 @@ function registerButton() {
 
   const attributeEmail = new AmazonCognitoIdentity.CognitoUserAttribute(dataEmail);
   const attributePersonalName = new AmazonCognitoIdentity.CognitoUserAttribute(dataPersonalName);
-  
-  
   attributeList.push(attributeEmail);
   attributeList.push(attributePersonalName);
-
   userPool.signUp(username, password, attributeList, null, function(err, result){
       if (err) {
           alert(err.message || JSON.stringify(err));
@@ -134,20 +134,18 @@ function registerButton() {
       cognitoUser = result.user;
       console.log('user name is ' + cognitoUser.getUsername());
       //change elements of page
-      alert("Check Your Email For Verification");
-      
+      alert("Check Your Email For Verification"); 
+      location.reload();
   });
 }
 
 function signInButton() {
-
     const authenticationData = {
         Username : document.getElementById("inputUsername").value,
         Password : document.getElementById("inputPassword").value,
     };
 
     const authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
-
     const poolData = {
         UserPoolId : _config.cognito.userPoolId, // Your user pool id here
         ClientId : _config.cognito.clientId, // Your client id here
@@ -160,38 +158,45 @@ function signInButton() {
     };
 
     const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
-    
     cognitoUser.authenticateUser(authenticationDetails, {
         onSuccess: function (result) {
             const accessToken = result.getAccessToken().getJwtToken();
             document.getElementById("formid").innerHTML= document.getElementById("inputUsername").value;
+            document.getElementById("currentUser").innerHTML = document.getElementById("inputUsername").value;
+            document.getElementById("formid").setAttribute( "onClick","openCurrent();");
             document.getElementById("loginForm").style.display = "none";
             document.getElementById("registerForm").style.display = "none";
+            console.log(cognitoUser);
+            location.reload();
         },
-
         onFailure: function(err) {
             alert(err.message || JSON.stringify(err));
         },
     });
   }
-function forgotPasswordButton() {
 
-    const email = document.getElementById("email").value;
+  function signOut(){
+    const cognitoUser = getUser();
+    if(cognitoUser != null){
+        cognitoUser.signOut();
+        // alert('Signed Out');
+        location.reload();
+    }
+}
 
+function forgotpasswordButton() {
   const poolData = {
       UserPoolId : _config.cognito.userPoolId,
       ClientId : _config.cognito.clientId,
   };
 
   const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
-
   const userData = {
-      Username : email,
+      Username : document.getElementById("inputUsername").value,
       Pool : userPool,
   };
 
   const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
-
   cognitoUser.forgotPassword({
       onSuccess: function (result) {
             console.log('call result: ' + result);
@@ -208,3 +213,37 @@ function forgotPasswordButton() {
   });
 }
 
+function getUser(){
+    const data = {
+        UserPoolId : _config.cognito.userPoolId,
+        ClientId : _config.cognito.clientId
+        };
+        const userPool = new AmazonCognitoIdentity.CognitoUserPool(data);
+        const cognitoUser = userPool.getCurrentUser();
+        return cognitoUser; 
+}
+
+     function onLoadSession(){
+        const cognitoUser = getUser();
+        if (cognitoUser != null){
+            cognitoUser.getSession(function(err, session) {
+                if (err) {
+                    alert(err);
+                    return;
+                }
+                console.log('session validity: ' + session.isValid());
+                document.getElementById("formid").setAttribute( "onClick","openCurrent();");
+
+                // Set the profile info
+                cognitoUser.getUserAttributes(function(err, result) {
+                    if (err) {
+                        console.log(err);
+                        return;
+                    }
+                    console.log(result);
+                    document.getElementById("formid").innerHTML = result[3].getValue();
+                    document.getElementById("currentUser").innerHTML = result[2].getValue();
+                });
+            });
+        }
+    }

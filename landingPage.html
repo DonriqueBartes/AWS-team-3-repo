@@ -9,18 +9,16 @@
     <link rel="icon" type="image/x-icon" href="/images/logo.png">
     <link rel="stylesheet" type='text/css' href="styles.css">
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="index.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="/node_modules/amazon-cognito-auth-js/dist/amazon-cognito-auth.min.js"></script>
+    <script src="node_modules/amazon-cognito-auth-js/dist/amazon-cognito-auth.min.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
-    <script src="/node_modules/amazon-cognito-identity-js/dist/amazon-cognito-identity.min.js"></script>
-    <script src="config.js"></script>
+    <script src="node_modules/amazon-cognito-identity-js/dist/amazon-cognito-identity.min.js"></script>
   </head>
 
-  <body class ="body">
+  <body onload="onLoadSession()" class ="body">
 
-    <button id="formid" class="open-button" onclick="openForm()">Login/Sign Up</button>
+    <!-- Done: Header -->
+    <button class="open-button" id="formid"  onclick="openForm()">Login/Sign Up</button>
+    <img class="logo-image" src="./images/logo.png">
 
     <div id="loginForm" class="form-popup">
       <form class="form-container">
@@ -29,10 +27,10 @@
         <input type="email" id="inputUsername" placeholder="Email" name="email" required>
         <input type="password" id="inputPassword" placeholder="Password" name="loginPassword" required>
         
-        <button type="button" class="btn" onclick="signInButton()">Login</button>
+        <button type="button" id="confirm-login" class="btn" onclick="signInButton()">Login</button>
         <button type="button" class="btn cancel" onclick="closeLogin()">Close</button>
 
-        <button type="button" class="formbutton" id="" onclick=openRegister()>Don't have an account? Sign up</a>
+        <button type="button" class="formbutton" onclick=openRegister()>Don't have an account? Sign up</a></button><br>
         <a href="./forgotpswd.html" class="formbutton" >Forgot Password</a>
       </form>
 
@@ -53,21 +51,26 @@
       </form>
     </div>
 
-    <!-- Done: Header -->
-    <header>
-        <img class="logo-image" src="./images/logo.png">
-    </header>
-
+    <div id="current-login" class="form-popup">
+      <form class="form-container">
+        <h3>Currently logged in as:<br></h3>
+        <label id="currentUser">UserExample</label>
+        <br>
+        <button type="button" class="formbutton" onclick="signOut()">Sign Out</button>
+        <label id="email_value"></label>
+        <button type="button" class="btn cancel" onclick="closeCurrentLogin()">Close</button>
+      </form>
+    </div>
     <!--Navi for food selection-->
     
       <!-- Done: Category Navigation Bar-->
       <div class = "container-button">
-          <button id="italian" class='btn-catg' onclick='findFood(this.value);animation()' value="italian">Italian </button>
-          <button id="steak" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="steakhouses">Steakhouses</button>
-          <button id="sushi" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="sushi">Sushi</button>
-          <button id="indian" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="indian">Indian</button>
-          <button id="dessert" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="dessert">Dessert</button>
-          <button id="coffee" class='btn-catg' onclick='findFood(this.value);gfg_Run()' value="coffee">Coffee</button>
+          <button id="italian" class='btn-catg' onclick='findFood(this.value)' value="italian">Italian </button>
+          <button id="steak" class='btn-catg' onclick='findFood(this.value)' value="steakhouses">Steakhouses</button>
+          <button id="sushi" class='btn-catg' onclick='findFood(this.value)' value="sushi">Sushi</button>
+          <button id="indian" class='btn-catg' onclick='findFood(this.value)' value="indian">Indian</button>
+          <button id="dessert" class='btn-catg' onclick='findFood(this.value)' value="dessert">Dessert</button>
+          <button id="coffee" class='btn-catg' onclick='findFood(this.value)' value="coffee">Coffee</button>
       </div>
     
     <div class="container-image">
@@ -79,5 +82,7 @@
     <div class= "data-out" id="output-stuff"></div>
 
   <!-- END OF PAGE -->
+  <script src="index.js"></script>
+  <script src="config.js"></script>
   </body> 
 </html>
