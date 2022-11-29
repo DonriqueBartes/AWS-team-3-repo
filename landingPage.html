@@ -16,7 +16,7 @@
     <script src="config.js"></script>
   </head>
 
-  <body class ="body">
+  <body onload="onLoadSession()" class ="body">
 
     <!-- Done: Header -->
     <button class="open-button" id="formid"  onclick="openForm()">Login/Sign Up</button>
@@ -32,7 +32,7 @@
         <button type="button" id="confirm-login" class="btn" onclick="signInButton()">Login</button>
         <button type="button" class="btn cancel" onclick="closeLogin()">Close</button>
 
-        <button type="button" class="formbutton" id="" onclick=openRegister()>Don't have an account? Sign up</a></button><br>
+        <button type="button" class="formbutton" onclick=openRegister()>Don't have an account? Sign up</a></button><br>
         <a href="./forgotpswd.html" class="formbutton" >Forgot Password</a>
       </form>
 
@@ -85,44 +85,4 @@
 
   <!-- END OF PAGE -->
   </body> 
-  <script>
-    const data = {
-    UserPoolId : _config.cognito.userPoolId,
-    ClientId : _config.cognito.clientId
-    };
-    const userPool = new AmazonCognitoIdentity.CognitoUserPool(data);
-    const cognitoUser = userPool.getCurrentUser();
-
-    window.onload = function(){
-        if (cognitoUser != null){
-            cognitoUser.getSession(function(err, session) {
-                if (err) {
-                    alert(err);
-                    return;
-                }
-                console.log('session validity: ' + session.isValid());
-                document.getElementById("formid").setAttribute( "onClick","openCurrent();");
-
-                // Set the profile info
-                cognitoUser.getUserAttributes(function(err, result) {
-                    if (err) {
-                        console.log(err);
-                        return;
-                    }
-                    console.log(result);
-                    document.getElementById("formid").innerHTML = result[3].getValue();
-                    document.getElementById("currentUser").innerHTML = result[2].getValue();
-                });
-            });
-        }
-    }
-
-    function signOut(){
-        if(cognitoUser != null){
-            cognitoUser.signOut();
-            // alert('Signed Out');
-            location.reload();
-        }
-    }
-  </script>
 </html>

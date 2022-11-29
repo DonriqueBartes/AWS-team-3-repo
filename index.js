@@ -175,6 +175,15 @@ function signInButton() {
     });
   }
 
+  function signOut(){
+    const cognitoUser = getUser();
+    if(cognitoUser != null){
+        cognitoUser.signOut();
+        // alert('Signed Out');
+        location.reload();
+    }
+}
+
 function forgotpasswordButton() {
   const poolData = {
       UserPoolId : _config.cognito.userPoolId,
@@ -203,3 +212,38 @@ function forgotpasswordButton() {
       }
   });
 }
+
+function getUser(){
+    const data = {
+        UserPoolId : _config.cognito.userPoolId,
+        ClientId : _config.cognito.clientId
+        };
+        const userPool = new AmazonCognitoIdentity.CognitoUserPool(data);
+        const cognitoUser = userPool.getCurrentUser();
+        return cognitoUser; 
+}
+
+     function onLoadSession(){
+        const cognitoUser = getUser();
+        if (cognitoUser != null){
+            cognitoUser.getSession(function(err, session) {
+                if (err) {
+                    alert(err);
+                    return;
+                }
+                console.log('session validity: ' + session.isValid());
+                document.getElementById("formid").setAttribute( "onClick","openCurrent();");
+
+                // Set the profile info
+                cognitoUser.getUserAttributes(function(err, result) {
+                    if (err) {
+                        console.log(err);
+                        return;
+                    }
+                    console.log(result);
+                    document.getElementById("formid").innerHTML = result[3].getValue();
+                    document.getElementById("currentUser").innerHTML = result[2].getValue();
+                });
+            });
+        }
+    }
