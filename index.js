@@ -184,19 +184,24 @@ function signInButton() {
     }
 }
 
-function forgotpasswordButton() {
+function forgotPasswordButton() {
+
+    const email = document.getElementById("email").value;
+
   const poolData = {
       UserPoolId : _config.cognito.userPoolId,
       ClientId : _config.cognito.clientId,
   };
 
   const userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+
   const userData = {
-      Username : document.getElementById("inputUsername").value,
+      Username : email,
       Pool : userPool,
   };
 
   const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+
   cognitoUser.forgotPassword({
       onSuccess: function (result) {
             console.log('call result: ' + result);
