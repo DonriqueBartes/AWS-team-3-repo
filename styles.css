@@ -7,7 +7,7 @@ html *{
   background-color: #00ffff;
   border-radius: 15px;
   padding: 10px;
-  border-spacing: 15px;
+  border-spacing: 16px;
  }
 
 * {box-sizing: border-box;}
